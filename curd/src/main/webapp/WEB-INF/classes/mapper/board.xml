@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="boardXML">
+ 	<resultMap id="boardRM" type="boardD" >
+		<result property="Boardno"	 	   column="Boardno" />
+		<result property="Boardsubject"   column="Boardsubject" />
+		<result property="Boardcontent"   column="Boardcontent" />
+		<result property="Boarddate"	   column="Boarddate" />
+	</resultMap> 
+	
+ 	<select id="BoardList" parameterType="boardD" resultMap="boardRM">
+ 		select * from (select a.*, rowNum rn from(
+ 			select * from board order by bno desc) a )
+			where rn between #{startRow} and #{endRow}
+	</select>
+	
+	<select id="getBoardTotal" parameterType="boardD" resultType="int">
+		select count(*) from board
+	</select>
+	
+	<select id="BoardView" parameterType="int" resultMap="boardRM">
+ 		select * from board where bno=#{bno}
+	</select>
+
+	<insert id="BoardAdd" parameterType="boardD">
+		insert into board values(board_seq.nextval,#{mno},sysdate,#{bsubject},#{bcontent},0,0,null,null)
+	</insert>
+	
+	<select id="BoardUpdateSelect" parameterType="boardD" resultMap="boardRM">
+		select * from board where bno=#{bno}
+	</select>
+	
+	<update id="BoardUpdate" parameterType="boardD">
+		update board set bsubject=#{bsubject},bcontent=#{bcontent},bupdate=sysdate where bno=#{bno}
+	</update>
+	
+	<update id="BoardDelete" parameterType="int">
+		update board set bdeldate=sysdate where bno=#{bno}
+	</update>
+	
+	<update id="BoardCountPlus" parameterType="boardD">
+		update board set bcount=bcount+1 where bno=#{bno}
+	</update>
+	
+ </mapper>

@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500&family=Sunflower:wght@500&display=swap');
+
+.btn {
+	font-family: 'Noto Serif KR', serif;
+	font-size : 20px;
+}
+
+label{
+	font-family: 'Noto Serif KR', serif;
+	font-size : 20px;
+}
+
+h2 {
+	font-family: 'Sunflower', sans-serif;
+	font-size : 30px;
+	text-align: center;
+}
+
+th {
+	font-family: 'Noto Serif KR', serif;
+	font-size : 20px;
+	text-align: center;
+}
+
+td {
+	font-family: 'Noto Serif KR', serif;
+	font-size : 20px;
+	text-align: center;
+}
+
+.input-group {
+	font-family: 'Noto Serif KR', serif;
+	font-size : 20px;
+	text-align: center;
+}

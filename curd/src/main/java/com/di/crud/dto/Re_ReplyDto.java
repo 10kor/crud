@@ -16,7 +16,7 @@ public class Re_ReplyDto {
 	private int rrdelete;
 
 	// page
-	private int start_Row;
-	private int end_row;
+	private int startRow;
+	private int endRow;
 	
 }

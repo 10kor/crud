@@ -16,7 +16,7 @@ public class MessageDto {
 	private int mcheck;
 
 	// page
-	private int start_Row;
-	private int end_row;
+	private int startRow;
+	private int endRow;
 
 }

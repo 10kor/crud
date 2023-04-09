@@ -13,10 +13,10 @@ public class ReplyDto {
 	private String rcontent;
 	private Date rdate;
 	private Date rupdate;
-	private int rdelelete;
+	private Date rdelelete;
 
 	// page
-	private int start_Row;
-	private int end_row;
+	private int startRow;
+	private int endRow;
 	
 }

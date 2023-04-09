@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="replyXML">
+	
+ 	<!-- 댓글작성 -->
+ 	<select id="ReplyAdd" parameterType="ReplyD">
+ 		insert into reply(rno, bno, mno, rcontent, rdate) values(reply_seq.nextval,#{bno},#{mno},#{rcontent},sysdate)
+ 	</select>
+	
+ 	<!-- 댓글 가져오기 -->
+ 	<select id="ReplyList" parameterType="ReplyD" resultType="com.di.crud.dto.ReplyDto">
+		select * from reply where bno=#{bno} order by rdate desc
+	</select>
+	
+	<!-- 
+		private int rno;
+		private int bno;
+		private int mno;
+		private String rcontent;
+		private Date rdate;
+		private Date rupdate;
+		private int rdelelete;
+	-->
+ </mapper>

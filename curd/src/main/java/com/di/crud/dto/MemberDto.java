@@ -10,18 +10,16 @@ public class MemberDto {
 	private int mno;
 	private String mail;
 	private String mpw;
-	private String gender;
-	private String address1;
-	private String address2;
+	private int gender;
+	private String location;
 	private String phone;
 	private Date register;
-	private String state;
-	private String delete;
+	private int state;
 	private Date deldate;
 	
 	// page
-	private int start_Row;
-	private int end_row;
+	private int startRow;
+	private int endRow;
 
 	// search
 	private String search;

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="memberXML">
+	
+	<!-- 로그인 -->
+	<select id="memberLogin" parameterType="String" resultType="memberD">
+    	select * from member where mail=#{mail} and state='0'
+    </select>
+    
+	<!-- 회원 가입 -->
+    <insert id="memberSign" parameterType="memberD"> 
+    	insert into member values 
+    	(member_seq.nextval,#{mail},#{mpw},#{gender},#{location},#{phone},sysdate,0,sysdate)
+    </insert>
+    
+	<!-- 이메일 중복검사 -->
+	<select id="memberMail" parameterType="String" resultType="int">
+    	select count(mail) from member where mail=#{mail}
+    </select>
+    
+	<!-- 회원정보 수정 --> 	
+	<update id="memberUpdate" parameterType="memberD">
+		update member set gender=#{gender},location=#{location},phone=#{phone} where mno=#{mno}
+	</update>
+	
+	<!-- 비밀번호 수정 -->
+    <update id="memberMpwUpdate" parameterType="int">
+    	update member set mpw=#{mpw} where mno=#{mno}
+    </update> 
+    
+	<!-- 회원 탈퇴 -->
+    <update id="memberDelete" parameterType="int">
+    	update member set deldate=sysdate, state=1 where mno=#{mno}
+    </update> 
+	
+ </mapper>
