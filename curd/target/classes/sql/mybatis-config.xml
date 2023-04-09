@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.di.crud.dto.MemberDto" alias="MemberD"></typeAlias>
+		<typeAlias type="com.di.crud.dto.MessageDto" alias="MessageD"></typeAlias>
+		<typeAlias type="com.di.crud.dto.BoardDto" alias="boardD"></typeAlias>
+		<typeAlias type="com.di.crud.dto.ReplyDto" alias="ReplyD"></typeAlias>
+		<typeAlias type="com.di.crud.dto.Re_ReplyDto" alias="Re_ReplyD"></typeAlias>
+	</typeAliases>
+</configuration>
