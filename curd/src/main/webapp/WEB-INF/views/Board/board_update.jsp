@@ -24,7 +24,7 @@
 				<br>
 				<div class="input-group">
 				  <span class="input-group-text">내용</span>
-				  <textarea id="bcontent" name="bcontent" 
+				  <textarea id="bcontent" name="bcontent" style="overflow-y:scroll; overflow-x:hidden; resize:none;"
 				  	class="form-control" rows="20" required>${list.bcontent}</textarea>
 				</div>
 				<br>
@@ -34,5 +34,5 @@
 	</div>
 	</div>
 </body>
+	<%@ include file="../footer.jsp"%>
 </html>
-

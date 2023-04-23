@@ -55,7 +55,7 @@
 	
 	<div class="input-group">
 		<span class="input-group-text">내용</span>
-		<textarea class="form-control" rows="20" readonly="readonly">${bv.bcontent}</textarea>
+		<textarea class="form-control" rows="20" readonly="readonly" style="overflow-y:scroll; overflow-x:hidden; resize:none;">${bv.bcontent}</textarea>
 	</div> 
 	<br>
 	
@@ -79,7 +79,8 @@
 			
 			<div class="input-group">
 				<span class="input-group-text">댓글</span>
-				<textarea class="form-control" rows="1" name="rcontent" onkeydown="resize(this)" onkeyup="resize(this)" required></textarea>
+				<textarea class="form-control" rows="1" name="rcontent" style="overflow-y:scroll; overflow-x:hidden; resize:none;" 
+					onkeydown="resize(this)" onkeyup="resize(this)" required></textarea>
 				<button class="btn btn-outline-secondary" type="submit" id="button-addon2">작성</button>
 			</div> 
 		</form>
@@ -88,12 +89,17 @@
 
 	<table class="table" border=1>
 	<c:forEach var="rv" items="${ReplyList}">
-		<tr><td>${rv.rcontent} 
-			<a style="font-size : 10px;"> (<fmt:formatDate value="${rv.rdate}" pattern="yy.MM.dd a HH:mm:ss"/>)</a>		
+		<tr align="left"><td>${rv.rcontent} 
+			<a style="font-size : 10px;"> (<fmt:formatDate value="${rv.rdate}" pattern="yy.MM.dd a HH:mm:ss"/>)</a>	
+			<c:if test="${rv.mno eq smno}">
+				<br>
+				<a href=# style="font-size : 15px;">수정</a>  <a href=# style="font-size : 15px;">삭제</a>
+			</c:if>	
 		</td></tr>
 	</c:forEach>
 	</table>
 	
 </div></div></div>
 </body>
+	<%@ include file="../footer.jsp"%>
 </html>

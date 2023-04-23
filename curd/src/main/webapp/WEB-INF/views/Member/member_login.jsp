@@ -11,14 +11,28 @@
 	<script>
 	 function check(){
 		 if($.trim($("#mail").val())==""){
-			 alert("이메일을 입력하세요!");
-			 $("#mail").val("").focus();
-			 return false;
+			 Swal.fire	({
+					title: '이메일을 입력하세요',
+				    icon: 'warning',
+				    showConfirmButton: false,
+				    timer: 1500,
+				    timerProgressBar: true
+				    }).then(() => {
+						 $("#mail").val("").focus();
+						 return false;
+				    })
 		 }
 		 if($.trim($("#mpw").val())==""){
-			 alert("비밀번호를 입력하세요!");
-			 $("#mpw").val("").focus();
-			 return false;
+			 Swal.fire	({
+					title: '비밀번호를 입력하세요',
+				    icon: 'warning',
+				    showConfirmButton: false,
+				    timer: 1500,
+				    timerProgressBar: true
+				    }).then(() => {
+						 $("#mpw"").val("").focus();
+						 return false;
+				    })
 		 }
 	 }
 	</script>
@@ -51,4 +65,5 @@
 <br>
 
 </body>
+	<%@ include file="../footer.jsp"%>
 </html>

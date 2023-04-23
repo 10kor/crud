@@ -5,9 +5,38 @@
 <html>
 <head>
 	<title>board_add</title>
+	
 </head>
 <body>
 <%@ include file="../navigation.jsp"%>
+	<script>
+	 function check(){
+		 if($.trim($("#bsubject").val())==""){
+			 Swal.fire	({
+					title: '제목을 입력하세요',
+				    icon: 'warning',
+				    showConfirmButton: false,
+				    timer: 1500,
+				    timerProgressBar: true
+				    }).then(() => {
+						 $("#bsubject").val("").focus();
+						 return false;
+				    })
+		 }
+		 if($.trim($("#bcontent").val())==""){
+			 Swal.fire	({
+					title: '내용을 입력하세요',
+				    icon: 'warning',
+				    showConfirmButton: false,
+				    timer: 1500,
+				    timerProgressBar: true
+				    }).then(() => {
+						 $("#bcontent").val("").focus();
+						 return false;
+				    })
+		 }
+	 }
+	</script>
 	<h2>게시물 작성</h2>
 	<br>
 	<div class="container text-center">
@@ -24,7 +53,7 @@
 				<br>
 				<div class="input-group">
 				  <span class="input-group-text">내용</span>
-				  <textarea id="bcontent" name="bcontent" 
+				  <textarea id="bcontent" name="bcontent" style="overflow-y:scroll; overflow-x:hidden; resize:none;"
 				  	class="form-control" aria-label="With textarea" rows="20"required></textarea>
 				</div>
 				<br>
@@ -34,4 +63,5 @@
 	</div>
 	</div>
 </body>
+	<%@ include file="../footer.jsp"%>
 </html>

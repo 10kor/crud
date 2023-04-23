@@ -3,16 +3,30 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
+<%@ include file="../header.jsp"%>
 <c:if test="${result == 1}">
 	<script>
-		alert("등록되지 않는 회원 입니다.");
-		history.go(-1);
+		Swal.fire	({
+			title: '등록되지 않는 회원 입니다.',
+		    icon: 'error',
+		    showConfirmButton: false,
+		    timer: 1500,
+		    timerProgressBar: true
+		    }).then(() => {
+		    	history.go(-1);
+		    })
 	</script>
-</c:if>   
-
+</c:if>
 <c:if test="${result == 2}">
 	<script>
-		alert("회원정보가 틀렸습니다.");
-		history.go(-1);
+		Swal.fire	({
+			title: '회원정보가 틀렸습니다.',
+		    icon: 'error',
+		    showConfirmButton: false,
+		    timer: 1500,
+		    timerProgressBar: true
+		    }).then(() => {
+		    	history.go(-1);
+		    })
 	</script>
-</c:if>  
+</c:if>

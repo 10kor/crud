@@ -11,16 +11,31 @@
 <title>board_update_action</title>
 </head>
 <body>
+<%@ include file="../header.jsp"%>
 	<c:if test="${result > 0 }">
-		<script type="text/javascript">
-			alert("작성 성공");
-			location.href = "board_list.do";
+		<script>
+			Swal.fire	({
+				title: '수정 성공',
+			    icon: 'success',
+			    showConfirmButton: false,
+			    timer: 1500,
+			    timerProgressBar: true
+			    }).then(() => {
+			    	location.href = "board_list.do";
+			    })
 		</script>
 	</c:if>
 	<c:if test="${result <= 0 }">
-		<script type="text/javascript">
-			alert("작성 실패");
-			history.go(-1);
+		<script>
+			Swal.fire	({
+				title: '수정 실패',
+			    icon: 'error',
+			    showConfirmButton: false,
+			    timer: 1500,
+			    timerProgressBar: true
+			    }).then(() => {
+			    	history.go(-1);
+			    })
 		</script>
 	</c:if>
 </body>

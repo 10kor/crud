@@ -40,7 +40,7 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="D:/ojdbc6.jar"/>
-	<classpathentry kind="lib" path="F:/중앙학원 강의자료/repository/repository/servlets/com/cos/05Nov2002/cos-05Nov2002.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/lib/cos-05Nov2002.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/lib/ojdbc6.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

@@ -9,13 +9,19 @@
 <title>member_delete</title>
 </head>
 <body>
-
+<%@ include file="../header.jsp"%>
 <c:if test="${result > 0 }">
 	<script>
-	alert("회원 정보가 삭제되었습니다.");
-	location.href="member_logout.do"; 
+		Swal.fire	({
+			title: '회원 정보가 삭되었습니다.',
+		    icon: 'success',
+		    showConfirmButton: false,
+		    timer: 1500,
+		    timerProgressBar: true
+		    }).then(() => {
+		    	location.href="member_logout.do"; 
+		    })
 	</script>
 </c:if>
-
 </body>
 </html>
